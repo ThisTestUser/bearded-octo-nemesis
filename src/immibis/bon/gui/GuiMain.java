@@ -30,16 +30,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.prefs.Preferences;
-import javax.swing.JButton;
-import javax.swing.JComboBox;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
-import javax.swing.JPanel;
-import javax.swing.JProgressBar;
-import javax.swing.JTextField;
-import javax.swing.SwingConstants;
-import javax.swing.SwingUtilities;
+
+import javax.swing.*;
 
 public class GuiMain extends JFrame {
 	private static final long serialVersionUID = 1;
@@ -338,6 +330,14 @@ public class GuiMain extends JFrame {
 	}
 	
 	public GuiMain() {
+		try
+		{
+			UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+		}catch(ClassNotFoundException | InstantiationException
+			| IllegalAccessException | UnsupportedLookAndFeelException e)
+		{
+			e.printStackTrace();
+		}
 		JPanel contentPane = new JPanel();
 		contentPane.setLayout(new GridBagLayout());
 		GridBagConstraints gbc;
